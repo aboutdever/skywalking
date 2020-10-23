@@ -21,14 +21,16 @@ on:
   push:
     branches:
       - master
+      - k8s/service-registry
 
 env:
   SKIP_TEST: true
   ES_VERSION: es7
   ISTIO_VERSION: 1.7.1
+  K8S_VER: 1.17.0
   TAG: ${{ github.sha }}
   SCRIPTS_DIR: test/e2e-mesh/e2e-istio/scripts
-  SW_OAP_BASE_IMAGE: openjdk:8-jre-alpine
+  SW_OAP_BASE_IMAGE: openjdk:8-jdk
 
 jobs:
   als:
